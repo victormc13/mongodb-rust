@@ -19,11 +19,11 @@ async fn main() -> Result<(), Error> {
     let client = Client::with_uri_str(mongodb_uri).await?;
 
     // Get a handle on the database
-    let database = client.database("swapper_db");
-    let my_coll: Collection<Document> = database.collection("users");
+    let database = client.database("sample_analytics");
+    let my_coll: Collection<Document> = database.collection("customers");
 
     // Find a movie based on the title value
-    let my_user = my_coll.find_one(doc! {"email": "leonscott@gmail.com"}, None).await?;
+    let my_user = my_coll.find_one(doc! {"username": "hillrachel"}, None).await?;
 
     // Print the document
     println!("Found a user: \n{:#?}", my_user.unwrap());
