@@ -22,7 +22,7 @@ async fn main() -> Result<(), Error> {
     let database = client.database("sample_analytics");
     let my_coll: Collection<Document> = database.collection("customers");
 
-    // Find a movie based on the title value
+    // Find a user based on the username value
     let my_user = my_coll.find_one(doc! {"username": "hillrachel"}, None).await?;
 
     // Print the document
